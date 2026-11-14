@@ -11,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* ---------- CABECERA ---------- */
 .cabecero {
     display: flex;
     justify-content: space-between;
@@ -35,7 +34,7 @@ body {
     text-shadow: 2px 2px 0 #000000;
 }
 
-/* ---------- MENÚ DESPLEGABLE (solo CSS) ----------
+/* menu desplegable
    - El <nav> es la referencia de posición y muestra un botón (::before).
    - La lista <ul> está oculta y colocada justo debajo (position: absolute).
    - Al pasar el ratón por el <nav> (:hover) la lista aparece. */
@@ -80,10 +79,6 @@ body {
     color: #000000;
 }
 
-/* ---------- CONTENIDO ----------
-   Mismo esquema de siempre: grid de 3 columnas con el contenido
-   en la columna central. Solo cambian los porcentajes según el
-   tamaño de pantalla. */
 .contenido {
     padding: 10px;
     display: grid;
@@ -112,7 +107,7 @@ h2 {
     border-bottom: 4px solid #ff2d2d;
 }
 
-/* En móvil los elementos van uno debajo de otro (column) */
+/* en movil los elementos van uno debajo de otro (column) */
 .contenido_intro,
 .contenido_desarrollo,
 .contenido_final {
@@ -130,7 +125,7 @@ h2 {
     text-align: justify;
 }
 
-/* width: 100% + max-width = se adapta al panel sin desbordar */
+/* width: 100% y max-width se adaptam al panel sin salirse */
 .contenido img,
 .contenido video {
     width: 100%;
@@ -140,7 +135,6 @@ h2 {
     border: 3px solid #ffe600;
 }
 
-/* ---------- PIE ---------- */
 .pie {
     display: flex;
     flex-direction: column;
@@ -173,15 +167,18 @@ h2 {
     gap: 15px;
 }
 
-/* =========================================================
-   TABLET (desde 768px)
-   Los paneles pasan a fila: texto e imagen/vídeo lado a lado.
-   ========================================================= */
 @media (min-width: 768px) {
-    .cabecero img { width: 80px; height: 80px; }
-    .cabecero h1 { font-size: 32px; }
+    .cabecero img {
+        width: 80px;
+        height: 80px; 
+    }
+    .cabecero h1 { 
+        font-size: 32px;
+    }
 
-    .contenido { grid-template-columns: 5% 90% 5%; }
+    .contenido { 
+        grid-template-columns: 5% 90% 5%; 
+    }
 
     .contenido_intro,
     .contenido_desarrollo,
@@ -200,24 +197,44 @@ h2 {
         text-align: left;
     }
 
-    .pie div { flex-direction: row; }
+    .pie div { 
+        flex-direction: row; 
+    }
 }
 
-/* =========================================================
-   ESCRITORIO (desde 1100px)
-   Márgenes laterales del 10% y elementos más grandes.
-   ========================================================= */
 @media (min-width: 1100px) {
-    .cabecero img { width: 100px; height: 100px; margin-left: 20px; }
-    .cabecero h1 { font-size: 40px; letter-spacing: 3px; }
-    .cabecero nav { margin-right: 20px; }
+    .cabecero img { 
+        width: 100px; 
+        height: 100px; 
+        margin-left: 20px; 
+    
+    }
+    .cabecero h1 { 
+        font-size: 40px; 
+        letter-spacing: 3px; 
+    }
+    .cabecero nav { 
+        margin-right: 20px; 
+    }
 
-    .contenido { grid-template-columns: 10% 80% 10%; }
+    .contenido { 
+        grid-template-columns: 10% 80% 10%; 
+    }
 
-    h2 { font-size: 34px; }
+    h2 { 
+        font-size: 34px; 
+    }
 
-    .contenido p { font-size: 18px; }
+    .contenido p { 
+        font-size: 18px; 
+    }
 
-    .contenido img { width: 400px; height: 200px; object-fit: cover; }
-    .contenido video { width: 640px; }
+    .contenido img { 
+        width: 400px; 
+        height: 200px; 
+        object-fit: cover; 
+    }
+    .contenido video { 
+        width: 640px; 
+    }
 }
