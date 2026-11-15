@@ -38,14 +38,9 @@ body {
    - El <nav> es la referencia de posición y muestra un botón (::before).
    - La lista <ul> está oculta y colocada justo debajo (position: absolute).
    - Al pasar el ratón por el <nav> (:hover) la lista aparece. */
-.cabecero nav {
-    position: relative;
-    cursor: pointer; /* ayuda a que el "hover" funcione al tocar en móvil */
-}
 
 .cabecero nav::before {
     content: "☰ Menú";
-    display: block;
     padding: 8px 14px;
     background-color: #ffe600;
     color: #000000;
@@ -57,12 +52,10 @@ body {
     display: none;
     position: absolute;
     right: 0;
-    top: 100%;
     width: 220px;
     list-style: none;
     background-color: #1e90ff;
-    border-radius: 0 0 8px 8px;
-    z-index: 10; /* por encima del resto del contenido */
+    border-radius: 8px 0 8px 8px;
 }
 
 .cabecero nav:hover ul {
@@ -70,7 +63,7 @@ body {
 }
 
 .cabecero nav li {
-    padding: 12px 16px;
+    padding: 16px;
     border-bottom: 1px solid #ffffff4d;
 }
 
@@ -83,6 +76,7 @@ body {
     padding: 10px;
     display: grid;
     grid-template-columns: 2% 96% 2%;
+    grid-template-rows: auto auto auto;
 }
 
 .inicio,
@@ -107,7 +101,6 @@ h2 {
     border-bottom: 4px solid #ff2d2d;
 }
 
-/* en movil los elementos van uno debajo de otro (column) */
 .contenido_intro,
 .contenido_desarrollo,
 .contenido_final {
@@ -147,6 +140,7 @@ h2 {
     text-align: center;
 }
 
+/*logo fia con el copyright*/
 .pie div {
     display: flex;
     flex-direction: column;
