@@ -35,10 +35,6 @@ body {
   text-shadow: 2px 2px 0 #000000;
 }
 
-/* menu desplegable
-   - el nav es la referencia de posición y muestra un botón (::before).
-   - la lista ul está oculta y colocada justo debajo (position: absolute).
-   - al pasar el ratón por el nav (:hover) la lista aparece. */
 .cabecero nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -59,12 +55,13 @@ body {
   padding: 10px;
   display: grid;
   grid-template-columns: 2% 96% 2%;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
 }
 
 .inicio,
 .desarrollo,
-.final {
+.final,
+.galeria {
   grid-column: 2/3;
   text-align: center;
   margin-top: 20px;
@@ -76,8 +73,11 @@ body {
 .desarrollo {
   grid-row: 2/3;
 }
-.final {
+.galeria {
   grid-row: 3/4;
+}
+.final {
+  grid-row: 4/5;
 }
 
 h2 {
@@ -97,7 +97,8 @@ h3 {
 
 .contenido_intro,
 .contenido_desarrollo,
-.contenido_final {
+.contenido_final,
+.contenido_galeria {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -120,6 +121,9 @@ h3 {
   border-radius: 8px;
   border: 3px solid #ffe600;
 }
+.contenido_final {
+  justify-content: center;
+}
 
 .pie {
   display: flex;
@@ -133,7 +137,23 @@ h3 {
   text-align: center;
 }
 
-/*logo fia con el copyright*/
+.formulario {
+  padding: 20px;
+  background-color: #101018;
+  border-radius: 8px;
+}
+.formulario input {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.formulario button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ff2d2d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
 .pie div {
   display: flex;
   flex-direction: column;
@@ -174,21 +194,47 @@ h3 {
   .contenido_desarrollo {
     flex-direction: row;
   }
+  .contenido_galeria {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   .contenido img,
   .contenido video {
-    width: 45%; /* ocupan menos de la mitad para dejar sitio al texto */
+    width: 45%;
+  }
+  .formulario {
+    width: 100%;
+    max-width: 450px;
   }
 
-  .pie {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+  .formulario label {
+    font-size: 18px;
   }
 
-  .pie div {
-    flex-direction: row;
+  .formulario input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
   }
+
+  .formulario button {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
+
+.pie {
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.pie div {
+  flex-direction: row;
 }
 
 @media (min-width: 1100px) {
@@ -227,5 +273,9 @@ h3 {
   }
   .contenido_final {
     flex-direction: row;
+    justify-content: space-around;
+  }
+  .contenido_final video {
+    width: 50%;
   }
 }
